@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="ts2fable\BaseTypes.fs" />
+    <Compile Include="ts2fable\utils-animate.fs" />
+    <Compile Include="ts2fable\Camera.fs" />
+    <Compile Include="ts2fable\Settings.fs" />
+    <Compile Include="ts2fable\Sigma.fs" />
+    <Compile Include="SigmaDSL.fs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <NpmDependencies>
+      <NpmPackage Name="sigma" Version="&gt;= 3.0.0-beta.2 &lt; 4.0.0" ResolutionStrategy="max" />
+    </NpmDependencies>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageOutputPath>D:\src\interactivenuget</PackageOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="8.0.100" />
+    <PackageReference Include="Fable.Browser.Dom" Version="2.15.0" />
+    <PackageReference Include="Fable.Core" Version="4.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fable.Graphology\Fable.Graphology.fsproj" />
+  </ItemGroup>
+
+</Project>
+

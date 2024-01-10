@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <UserSecretsId>41febbf4-71f2-4c1f-83fc-2ae575f5d78a</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Utils.fs" />
+    <Compile Include="Model.fs" />
+    <Compile Include="Palette.fs" />
+    <Compile Include="Data\Cities.fs" />
+    <Compile Include="Data\HarryExample.fs" />
+    <Compile Include="Feliz\NodesList.fs" />
+    <Compile Include="Feliz\Timeline.fs" />
+    <Compile Include="Styles\Typed.fs" />
+    <Compile Include="Json.fs" />
+    <Compile Include="Feliz\TagsInput.fs" />
+
+    <Compile Include="ActivePatterns.fs" />
+ 
+    <None Include="Data\Harry.js" />
+    <Compile Include="Subapps\Graph.fs" />
+    <Compile Include="Subapps\Stopwatch.fs" />
+    <Compile Include="App.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Graphology" Version="1.0.0" />
+    <PackageReference Include="Fable.SigmaJS" Version="1.0.0" />
+    <PackageReference Include="Feliz.Bulma" Version="3.0.0" />
+    <PackageReference Include="Feliz.Bulma.TagsInput" Version="3.0.0" />
+    <PackageReference Include="Feliz.Bulma.Timeline" Version="3.0.0" />
+    <PackageReference Include="Feliz.CompilerPlugins" Version="2.2.0" />
+    <PackageReference Include="Sutil" Version="2.*" />
+    <PackageReference Include="Thoth.Json" Version="10.2.0" />
+    <PackageReference Include="Zanaptak.TypedCssClasses" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fable.Graphology\Fable.Graphology.fsproj" />
+    <ProjectReference Include="..\Fable.SigmaJS\Fable.SigmaJS.fsproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="8.0.100" />
+  </ItemGroup>
+  <Target Name="ReallyClean" AfterTargets="Clean">
+    <!-- Remove obj folder -->
+    <RemoveDir Directories="$(BaseIntermediateOutputPath)" />
+    <!-- Remove bin folder -->
+    <RemoveDir Directories="$(BaseOutputPath)" />
+  </Target>
+</Project>
